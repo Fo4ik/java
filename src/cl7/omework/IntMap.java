@@ -1,6 +1,6 @@
 package cl7.omework;
 
-public interface IntMap<K,V>  {
+public interface IntMap {
     void clear();
 
     boolean containsKey(Object key);
@@ -11,9 +11,11 @@ public interface IntMap<K,V>  {
 
     boolean isEmpty();
 
-    int put(K key, V value);
+    int put(int key, int value);
 
     int remove(Object key);
 
     int size();
+
+
 }

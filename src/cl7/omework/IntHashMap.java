@@ -1,26 +1,22 @@
 package cl7.omework;
 
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
-public class IntHashMap<K, V> implements IntMap<K, V> {
-    private Map Node = new HashMap<Integer, Integer>();
-    private Node<K, V>[] table;
+public class IntHashMap implements IntMap {
+    Map map = new HashMap();
     private int modCount;
-    private int size;
+    private int size = 0, lenght = 1;
+    private int Key[] = new int[lenght];
+    private int Value[] = new int[lenght];
+    public int KeyChecker[] = Key;
 
 
     @Override
     public void clear() {
-        Node<K, V>[] tab;
-        modCount++;
-        if ((tab = table) != null && size > 0) {
-            size = 0;
-            for (int i = 0; i < tab.length; ++i)
-                tab[i] = null;
-        }
+
     }
 
     @Override
@@ -51,14 +47,26 @@ public class IntHashMap<K, V> implements IntMap<K, V> {
         return size() == 0;
     }
 
-    @Override
-    public int put(K key, V value) {
-        return 0;
+
+    public int  put(int value, int key) {
+        for (int i = 0; i < lenght; i++) {
+            size++;
+            Value[i] = value;
+            Key[i] = key;
+            i++;
+            toString1();
+            lenght++;
+            return value;
+        }
+        return Key.hashCode();
     }
 
-
-    public int put(Object key) {
-        return 0;
+    public void toString1() {
+        System.out.println("IntHashMap " +
+                "size=" + size +
+                ", Key=" + Arrays.toString(Key) +
+                ", Value=" + Arrays.toString(Value) +
+                ", KeyChecker= " + Arrays.toString(KeyChecker));
     }
 
     @Override
@@ -68,7 +76,7 @@ public class IntHashMap<K, V> implements IntMap<K, V> {
 
     @Override
     public int size() {
-        return size();
+        return size;
     }
 
 
@@ -77,62 +85,20 @@ public class IntHashMap<K, V> implements IntMap<K, V> {
     }
 
 
-    public V remove() {
-        return null;
-    }
+    //public key remove() {
+    //    return null;
+    //}
 
-    public static class Node<K, V> implements Map.Entry<K, V> {
-        final int hash;
-        final K key;
-        V value;
-        Node<K, V> next;
-
-        Node(int hash, K key, V value, Node<K, V> next) {
-            this.hash = hash;
-            this.key = key;
-            this.value = value;
-            this.next = next;
-        }
-
-        public final K getKey() {
-            return key;
-        }
-
-        public final V getValue() {
-            return value;
-        }
-
-        public final String toString() {
-            return key + "=" + value;
-        }
-
-        public final int hashCode() {
-            return Objects.hashCode(key) ^ Objects.hashCode(value);
-        }
-
-        public final V setValue(V newValue) {
-            V oldValue = value;
-            value = newValue;
-            return oldValue;
-        }
-
-        public final boolean equals(Object o) {
-            if (o == this)
-                return true;
-            if (o instanceof Map.Entry) {
-                Map.Entry<?, ?> e = (Map.Entry<?, ?>) o;
-                if (Objects.equals(key, e.getKey()) &&
-                        Objects.equals(value, e.getValue()))
-                    return true;
-            }
-            return false;
-        }
-    }
 
     @Override
     public int get(Object key) {
         return 0;
 
+    }
+
+
+    public void Hash(){
+        Key.hashCode();
     }
 
 }
