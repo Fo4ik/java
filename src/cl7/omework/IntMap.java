@@ -11,7 +11,7 @@ public interface IntMap {
 
     boolean isEmpty();
 
-    int put(int key, int value);
+    int[] put(int key, int value);
 
     int remove(Object key);
 

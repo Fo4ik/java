@@ -48,25 +48,21 @@ public class IntHashMap implements IntMap {
     }
 
 
-    public int  put(int value, int key) {
+    public int[] put(int value, int key) {
         for (int i = 0; i < lenght; i++) {
-            size++;
-            Value[i] = value;
-            Key[i] = key;
-            i++;
-            toString1();
-            lenght++;
-            return value;
+            if(Value.equals(Value[i])){
+                System.out.println("Error");
+            }else {
+                size++;
+                Value[i] = value;
+                Key[i] = key;
+                ToString();
+                i++;
+                lenght++;
+                return Value;
+            }
         }
-        return Key.hashCode();
-    }
-
-    public void toString1() {
-        System.out.println("IntHashMap " +
-                "size=" + size +
-                ", Key=" + Arrays.toString(Key) +
-                ", Value=" + Arrays.toString(Value) +
-                ", KeyChecker= " + Arrays.toString(KeyChecker));
+        return Key;
     }
 
     @Override
@@ -77,6 +73,15 @@ public class IntHashMap implements IntMap {
     @Override
     public int size() {
         return size;
+    }
+
+    public void ToString() {
+            System.out.println("IntHashMap " +
+                    "size=" + size +
+                    ", Key=" + Arrays.toString(Key) +
+                    ", Value=" + Arrays.toString(Value) + //);
+                    ", KeyChecker= " + Arrays.toString(KeyChecker));
+
     }
 
 
@@ -97,7 +102,7 @@ public class IntHashMap implements IntMap {
     }
 
 
-    public void Hash(){
+    public void Hash() {
         Key.hashCode();
     }
 
