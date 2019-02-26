@@ -9,9 +9,9 @@ public class IntHashMap implements IntMap {
     Map map = new HashMap();
     private int modCount;
     private int size = 0, lenght = 1;
-    private int Key[] = new int[lenght];
-    private int Value[] = new int[lenght];
-    public int KeyChecker[] = Key;
+    private int key[] = new int[lenght];
+    private int value[] = new int[lenght];
+    public int keyChecker[] = key;
 
 
     @Override
@@ -48,26 +48,26 @@ public class IntHashMap implements IntMap {
     }
 
 
-    public int[] put(int value, int key) {
+    public int[] put(int Value, int Key) {
         for (int i = 0; i < lenght; i++) {
             if (Hash()==true) {
                 System.out.println("Ok");
             } else {
                 size++;
-                Value[i] = value;
-                Key[i] = key;
+                this.value[i] = Value;
+                this.key[i] = Key;
                 ToString();
                 i++;
                 lenght++;
-                return Value;
+                return this.value;
             }
         }
-        return Key;
+        return this.key;
     }
 
     public Boolean Hash() {
         for (int i = 0; i < size; i++) {
-            if(Key.equals(Key[i])){
+            if(key.equals(key[i])){
                 return true;
             }
             else {
@@ -90,9 +90,9 @@ public class IntHashMap implements IntMap {
     public void ToString() {
         System.out.println("IntHashMap " +
                 "size=" + size +
-                ", Key=" + Arrays.toString(Key) +
-                ", Value=" + Arrays.toString(Value) + //);
-                ", KeyChecker= " + Arrays.toString(KeyChecker));
+                ", key=" + Arrays.toString(key) +
+                ", value=" + Arrays.toString(value) + //);
+                ", KeyChecker= " + Arrays.toString(keyChecker));
         if(Hash()==true){
         System.out.println("true");} else {
             System.out.println("False");
