@@ -50,9 +50,9 @@ public class IntHashMap implements IntMap {
 
     public int[] put(int value, int key) {
         for (int i = 0; i < lenght; i++) {
-            if(Value.equals(Value[i])){
-                System.out.println("Error");
-            }else {
+            if (Hash()==true) {
+                System.out.println("Ok");
+            } else {
                 size++;
                 Value[i] = value;
                 Key[i] = key;
@@ -63,6 +63,18 @@ public class IntHashMap implements IntMap {
             }
         }
         return Key;
+    }
+
+    public Boolean Hash() {
+        for (int i = 0; i < size; i++) {
+            if(Key.equals(Key[i])){
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        return false;
     }
 
     @Override
@@ -76,12 +88,15 @@ public class IntHashMap implements IntMap {
     }
 
     public void ToString() {
-            System.out.println("IntHashMap " +
-                    "size=" + size +
-                    ", Key=" + Arrays.toString(Key) +
-                    ", Value=" + Arrays.toString(Value) + //);
-                    ", KeyChecker= " + Arrays.toString(KeyChecker));
-
+        System.out.println("IntHashMap " +
+                "size=" + size +
+                ", Key=" + Arrays.toString(Key) +
+                ", Value=" + Arrays.toString(Value) + //);
+                ", KeyChecker= " + Arrays.toString(KeyChecker));
+        if(Hash()==true){
+        System.out.println("true");} else {
+            System.out.println("False");
+        }
     }
 
 
@@ -101,9 +116,5 @@ public class IntHashMap implements IntMap {
 
     }
 
-
-    public void Hash() {
-        Key.hashCode();
-    }
 
 }
