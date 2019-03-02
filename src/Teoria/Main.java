@@ -1,7 +1,5 @@
 package Teoria;
 
-import cl7.omework.IntMap;
-
 import java.util.*;
 
 
