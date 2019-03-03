@@ -8,21 +8,22 @@ public class listNodeArr {
 
     public static void main(String[] args) {
         ListNode list = new ListNode(1);
-        list.next = new ListNode(1);
-
-        list.next = new ListNode(2);
         list.next = new ListNode(3);
 
+        list.next.next = new ListNode(2);
+        list.next.next.next = new ListNode(2);
 
-        list = delDoublicat(list);
 
-        System.out.println(listNodeToString(list));
+        System.out.println(listToString(list));
+        System.out.println("=====================");
+        list = deleteDoublicates(list);
 
+        System.out.println(listToString(list));
 
 
     }
 
-    private static ListNode delDoublicat(ListNode list) {
+    private static ListNode deleteDoublicates(ListNode list) {
         Deque<ListNode> listNodeDeque = new ArrayDeque<>();
         if (list == null) {
             return null;
@@ -42,7 +43,7 @@ public class listNodeArr {
     }
 
 
-    private static String listNodeToString(ListNode list) {
+    private static String listToString(ListNode list) {
         StringBuilder sb = new StringBuilder();
 
         while (list != null) {

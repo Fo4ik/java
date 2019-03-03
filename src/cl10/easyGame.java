@@ -18,8 +18,8 @@ import java.util.TimerTask;
 public class easyGame extends Application {
 
 
-    private static final int BOARD_WIDTH = 500;
-    private static final int BOARD_HEIGHT = 500;
+    private static final int BOARD_WIDTH = 1000;
+    private static final int BOARD_HEIGHT = 1000;
 
     private int x = 10;
     private int y = 10;
@@ -36,7 +36,7 @@ public class easyGame extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        primaryStage.setTitle("Test");
+        primaryStage.setTitle("Move");
         Canvas canvas = new Canvas();
         canvas.setWidth(BOARD_WIDTH);
         canvas.setHeight(BOARD_HEIGHT);
@@ -71,8 +71,7 @@ public class easyGame extends Application {
             }
         });
         move2();
-        clear();
-        draw();
+
     }
 
     private void move2() {
