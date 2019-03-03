@@ -45,6 +45,7 @@ public abstract class Abs implements Shape{
             ySpeed = -ySpeed;
         }
 
+
     }
 
     @Override

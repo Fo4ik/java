@@ -6,14 +6,8 @@ import javafx.scene.paint.Color;
 import java.util.Random;
 
 public class Ball extends Abs {
-
-    private static double DIAMETER = 30;
-
-    private GraphicsContext gc;
-    private double x;
-    private double y;
-    private double xSpeed;
-    private double ySpeed;
+    public int ballx;
+    public int bally;
 
     public Ball(GraphicsContext gc, double x, double y) {
         super(gc, x, y);
