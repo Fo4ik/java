@@ -1,13 +1,9 @@
 package cl7.homework;
 
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-
 public class IntHashMap implements IntMap {
 
-    private class Entry {    //почему тут класс?
+    public class Entry {    //почему тут класс?
         Integer key;
         Integer value;
         Entry next;
@@ -78,7 +74,7 @@ public class IntHashMap implements IntMap {
             size++;
 
             if (size > threshold) {
-                resize();
+                newSize();
             }
         }
     }
@@ -170,17 +166,17 @@ public class IntHashMap implements IntMap {
         return null;
     }
 
-    private void resize() {
+    private void newSize() {
         int newSize = table.length * 2;
         Entry[] newTable = new Entry[newSize];
 
-        transfer(newTable);
+        broadcast(newTable);
 
         table = newTable;
         threshold = (int) (loadFactor * table.length);
     }
 
-    private void transfer(Entry[] newTable) {
+    private void broadcast(Entry[] newTable) {
         for (Entry entry : table) {
             if (entry != null) {
                 Entry tmp = entry;
