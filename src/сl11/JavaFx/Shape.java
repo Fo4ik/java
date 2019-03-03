@@ -1,6 +1,10 @@
 package сl11.JavaFx;
 
+
 public interface Shape {
-    void move();
-    void draw();
+
+    public  void move();
+    public  void draw();
+
 }
+

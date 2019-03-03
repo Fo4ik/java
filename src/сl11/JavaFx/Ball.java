@@ -5,58 +5,32 @@ import javafx.scene.paint.Color;
 
 import java.util.Random;
 
-public class Ball implements Shape {
+public class Ball extends Abs {
 
     private static double DIAMETER = 30;
 
     private GraphicsContext gc;
     private double x;
     private double y;
-
     private double xSpeed;
     private double ySpeed;
 
     public Ball(GraphicsContext gc, double x, double y) {
-        this.gc = gc;
-        this.x = x;
-        this.y = y;
-
-        Random random = new Random();
-        xSpeed = 2 + random.nextInt(5);
-        ySpeed = 2 + random.nextInt(5);
+        super(gc, x, y);
     }
 
-    @Override
-    public void move() {
-        x += xSpeed;
-        y += ySpeed;
-
-        if (x + DIAMETER > gc.getCanvas().getWidth()) {
-            xSpeed = -xSpeed;
-        }
-
-        if (y + DIAMETER > gc.getCanvas().getHeight()) {
-            ySpeed = -ySpeed;
-        }
-
-        if (x < 0) {
-            xSpeed = -xSpeed;
-        }
-
-        if (y < 0) {
-            ySpeed = -ySpeed;
-        }
-
-    }
-
-    @Override
     public void draw() {
+        DIAMETR =30;
         gc.setFill(Color.RED);
         gc.setStroke(Color.BLACK);
         gc.setLineWidth(2);
 
-        gc.fillOval(x, y, DIAMETER, DIAMETER);
-        gc.strokeOval(x, y, DIAMETER, DIAMETER);
+        gc.fillOval(x, y, DIAMETR, DIAMETR);
+        gc.strokeOval(x, y, DIAMETR, DIAMETR);
     }
 
+
 }
+
+
+
