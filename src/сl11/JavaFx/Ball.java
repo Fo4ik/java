@@ -3,14 +3,15 @@ package сl11.JavaFx;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
+import java.util.List;
 import java.util.Random;
 
 public class Ball extends Abs {
     public int ballx;
     public int bally;
 
-    public Ball(GraphicsContext gc, double x, double y) {
-        super(gc, x, y);
+    public Ball(GraphicsContext gc, double x, double y, List<Shape> shapes) {
+        super(gc, x, y, shapes);
     }
 
     public void draw() {

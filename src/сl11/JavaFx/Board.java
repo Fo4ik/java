@@ -13,12 +13,12 @@ public class Board {
 
     public Board(GraphicsContext gc) {
         this.gc = gc;
-        shapes.add(new Ball(gc, 10, 20));
-        shapes.add(new Ball(gc, 104, 240));
-        shapes.add(new Ball(gc, 4, 250));
-        shapes.add(new Square(gc, 25, 300));
-        shapes.add(new Square(gc, 225, 303));
-        shapes.add(new Figure(gc, 4,56));
+        shapes.add(new Ball(gc, 10, 20, shapes));
+        shapes.add(new Ball(gc, 104, 240, shapes));
+        shapes.add(new Ball(gc, 4, 250, shapes));
+        shapes.add(new Square(gc, 25, 300, shapes));
+        shapes.add(new Square(gc, 295, 303, shapes));
+        shapes.add(new Figure(gc, 4,56, shapes));
 
     }
 

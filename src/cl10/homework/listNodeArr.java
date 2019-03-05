@@ -3,8 +3,7 @@ package cl10.homework;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-public class listNodeArr {
-
+public class ListNodeArr {
 
     public static void main(String[] args) {
         ListNode list = new ListNode(1);

@@ -3,13 +3,13 @@ package сl11.JavaFx;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
-import java.util.Random;
+import java.util.List;
 
 public class Square extends Abs  {
 
 
-    public Square(GraphicsContext gc, double x, double y) {
-        super(gc, x, y);
+    public Square(GraphicsContext gc, double x, double y, List<Shape> shapes) {
+        super(gc, x, y, shapes);
     }
 
 

@@ -3,11 +3,13 @@ package сl11.JavaFx;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
+import java.util.List;
+
 public class Figure extends Abs {
 
 
-    public Figure(GraphicsContext gc, double x, double y) {
-        super(gc, x, y);
+    public Figure(GraphicsContext gc, double x, double y, List<Shape> shapes) {
+        super(gc, x, y, shapes);
     }
 
     @Override
