@@ -5,6 +5,7 @@ import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
@@ -15,7 +16,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 
-public class easyGame extends Application {
+public class EasyGame extends Application {
 
 
     private static final int BOARD_WIDTH = 1000;
@@ -49,7 +50,7 @@ public class easyGame extends Application {
         scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
-                /*if (event.getCode() == KeyCode.RIGHT) {
+            if (event.getCode() == KeyCode.RIGHT) {
                     System.out.println("RIGHT");
                     if (x < gc.getCanvas().getWidth() - 30) {
                         x = x + 5;
@@ -66,59 +67,14 @@ public class easyGame extends Application {
                     if (y < gc.getCanvas().getHeight() + 30) {
                         y = y - 5;
                     }
-                }*/
+                }
 
             }
         });
-        move2();
 
     }
 
-    private void move2() {
-        TimerTask timerTask = new TimerTask() {
-            @Override
-            public void run() {
-                move();
-            }
-        };
 
-        Timer timer = new Timer();
-        timer.schedule(timerTask, 20, 20);
-    }
-
-    private void move() {
-        clear();
-        if (x <= 0) {
-            alltrue = true;
-            movex = random.nextInt(4);
-        }
-        if (y <= 0) {
-            alltrue = true;
-            movey = random.nextInt(4);
-        }
-        if (y >= gc.getCanvas().getHeight() - 30) {
-            alltrue = false;
-            movey = random.nextInt(4);
-        }
-        if (x >= gc.getCanvas().getWidth() - 30) {
-            alltrue = false;
-            movex = random.nextInt(4);
-        }
-
-        if (alltrue) {
-            x += 2 + movex;
-        }
-        if (!alltrue) {
-            x -= 2 + movex;
-        }
-        if (alltrue) {
-            y += 2 + movey;
-        }
-        if (!alltrue) {
-            y -= 2 + movey;
-        }
-        draw();
-    }
 
 
     private void clear() {
